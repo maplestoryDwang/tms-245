@@ -530,25 +530,26 @@ CREATE TABLE `cashshop_menuitems` (
 -- ----------------------------
 DROP TABLE IF EXISTS `cashshop_modified_items`;
 CREATE TABLE `cashshop_modified_items` (
-  `serial` int(11) NOT NULL,
-  `discount_price` int(11) NOT NULL DEFAULT '-1',
-  `mark` tinyint(1) NOT NULL DEFAULT '-1',
-  `showup` tinyint(1) NOT NULL DEFAULT '-1',
-  `itemid` int(11) NOT NULL DEFAULT '0',
-  `priority` tinyint(3) NOT NULL DEFAULT '0',
-  `package` tinyint(1) NOT NULL DEFAULT '0',
-  `period` tinyint(3) NOT NULL DEFAULT '0',
-  `gender` tinyint(1) NOT NULL DEFAULT '0',
-  `count` tinyint(3) NOT NULL DEFAULT '0',
-  `meso` int(11) NOT NULL DEFAULT '0',
-  `csClass` tinyint(1) NOT NULL DEFAULT '0',
-  `termStart` int(11) NOT NULL DEFAULT '0',
-  `termEnd` int(11) NOT NULL DEFAULT '0',
-  `fameLimit` smallint(6) NOT NULL DEFAULT '0',
-  `levelLimit` smallint(6) NOT NULL DEFAULT '0',
-  `categories` tinyint(3) NOT NULL DEFAULT '0',
-  `bast_new` tinyint(1) NOT NULL DEFAULT '0',
-  PRIMARY KEY (`serial`)
+                                           `serial` int(11) NOT NULL,
+                                           `discount_price` int(11) NOT NULL DEFAULT '-1',
+                                           `mark` tinyint(1) NOT NULL DEFAULT '-1',
+                                           `showup` tinyint(1) NOT NULL DEFAULT '-1',
+                                           `itemid` int(11) NOT NULL DEFAULT '0',
+                                           `priority` tinyint(3) NOT NULL DEFAULT '0',
+                                           `package` tinyint(1) NOT NULL DEFAULT '0',
+                                           `period` tinyint(3) NOT NULL DEFAULT '0',
+                                           `gender` tinyint(1) NOT NULL DEFAULT '0',
+                                           `count` tinyint(3) NOT NULL DEFAULT '0',
+                                           `meso` int(11) NOT NULL DEFAULT '0',
+                                           `csClass` tinyint(1) NOT NULL DEFAULT '0',
+                                           `termStart` int(11) NOT NULL DEFAULT '0',
+                                           `termEnd` int(11) NOT NULL DEFAULT '0',
+                                           `fameLimit` smallint(6) NOT NULL DEFAULT '0',
+                                           `levelLimit` smallint(6) NOT NULL DEFAULT '0',
+                                           `categories` tinyint(3) NOT NULL DEFAULT '0',
+                                           `bast_new` tinyint(1) NOT NULL DEFAULT '0',
+                                           `extra_flags` tinyint(1) NOT NULL DEFAULT '0',
+                                           PRIMARY KEY (`serial`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- ----------------------------

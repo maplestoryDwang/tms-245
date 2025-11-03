@@ -40,8 +40,10 @@ var monstermaps = Array(
     Array(310070210,0,"天際線1 (適合等級 210以上)"),
     Array(310070300,0,"黑色天堂甲板1 (適合等級 220以上)"),
     Array(310070330,0,"黑色天堂甲板3 (適合等級 230以上)"),
-    Array(310070480,0,"黑色天堂內部迷宮6 (適合等級 240以上)")                                        
-); 
+    Array(310070480,0,"黑色天堂內部迷宮6 (適合等級 240以上)") ,
+    Array(450001000,0,"無名村"),
+    Array(450002202,0,"啾啾岛")
+);
 
 
 var bossmap = Array(
@@ -148,6 +150,7 @@ function action(mode, type, selection) {
         menu += "\r\n#L2000#" + eff + "#r農楓幣圖#k#b#l";
         menu += "\r\n#L201#" + eff + "#r組隊副本#k#b#l";
         menu += "\r\n#L200#" + eff + "#r結婚禮堂#k#b#l";
+        menu += "\r\n#L202#" + eff + "#r打開VUI#k#b#l";
         if (cm.getPlayer().isIntern()) {
             menu += "\r\n#L100#" + eff + "#r工作場所#k#b#l";
         }
@@ -196,7 +199,12 @@ function action(mode, type, selection) {
                 cm.dispose();
                 cm.openNpc(9000086, "TeamEvent");
                 return;
-        } else if (selection == 8) {       
+        } else if (selection == 202) {
+            cm.openUI(1130);
+            cm.dispose();
+            return;
+        }
+        else if (selection == 8) {
                            for (var i = 0; i < tiaotiaomaps.length; i++) {
                     selStr += "\r\n#L" + i + "#" + tiaotiaomaps[i][2] + "";
                            }    
@@ -236,7 +244,7 @@ function action(mode, type, selection) {
             selectedArea = selection;
         }
         //cm.sendYesNo("看來這裡的事情都已經處理完了啊。您真的要移動到 #m" + (selectedArea == 0 ? maps[selection] : monstermaps[selection]) + "# 嗎？");
-    cm.sendYesNo("看來這裡的事情都已經處理完了啊。您真的要移動嗎？");
+        cm.sendYesNo("看來這裡的事情都已經處理完了啊。您真的要移動嗎？");
         selectedMap = selection;
     } else if (status == 3) {
         if (selectedMap >= 0) {

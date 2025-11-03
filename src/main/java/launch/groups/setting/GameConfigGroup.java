@@ -15,7 +15,7 @@ public class GameConfigGroup extends AbstractConfigGroup {
     public Component getPreview() {
         TitleWebPanel titleWebPanel1 = new TitleWebPanel("倍率設置");
         titleWebPanel1.add(new GroupPanel(false,
-                new ConfigComponent("基礎經驗%", "channel.rate.baseexp", ServerConfig.CHANNEL_RATE_BASEEXP),
+                new ConfigComponent("基礎經驗百分比（默認100）", "channel.rate.baseexp", ServerConfig.CHANNEL_RATE_BASEEXP),
                 new ConfigComponent("伺服器經驗倍率", "channel.rate.exp", ServerConfig.CHANNEL_RATE_EXP),
                 new ConfigComponent("楓幣倍率", "channel.rate.meso", ServerConfig.CHANNEL_RATE_MESO),
                 new ConfigComponent("怪物掉寶倍率", "channel.rate.drop", ServerConfig.CHANNEL_RATE_DROP),

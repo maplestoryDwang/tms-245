@@ -41,17 +41,26 @@ password: 123456
    如下配置：即可在简体环境登陆。
    ![](./asset/config.png)
 
-4. 任务管理器 手动杀掉AES检查.等一分钟可能也行
+4. 任务管理器 手动杀掉AES检查.等一分钟可能也行 
+5. 開啓管理
+在config/settings.properties文件下修改：
+> gui.enabled=true
 
+這裏有很多選項可以控制
+![](./asset/admin.png)
 
-5. 常用指令
-!刷樂豆點 10000
+6. BOSS攻略
+需要開啓BOSS事件才可以進行攻略
+   ![](./asset/EVENT-START.png)
 
-
-
+7. 客戶端有帶245IDB，可以用來學習研究
 
 ## 修复
 2025-06-26
 数据库少一个字段导致导入不了商城商品
 > ALTER TABLE `cashshop_modified_items` add COLUMN `extra_flags` tinyint(1)
 然后看补丁说需要删除这个字段
+
+
+2025-11-04
+修復啓動會導致并發修改異常，修復SQL文件

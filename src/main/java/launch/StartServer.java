@@ -17,6 +17,8 @@ public class StartServer {
 
     public static void main(String[] args) {
         System.out.println("初始化配置...");
+        System.setProperty("debug", "dev");
+
         Config.load();
         MapleDataProviderFactory.init();
         if (!InitializeServer.initServer()) {
@@ -25,7 +27,6 @@ public class StartServer {
         }
         HttpServer.start();
         startServer();
-//        System.setProperty("debug", "dev");
         //EcpayServer.SocketServer.StartServer();
     }
 

@@ -107,7 +107,7 @@ public class MaplePacketDecoder extends ByteToMessageDecoder {
                 }
                 StringBuilder recvString = new StringBuilder();
                 String t = packetLen >= 10 ? packetLen >= 100 ? packetLen >= 1000 ? "" : " " : "  " : "   ";
-                recvString.append("\r\n").append("[CP]\t").append(op.name()).append(tab).append("\t包頭:").append(pHeaderStr).append(t).append("[").append(packetLen).append("字元]");
+                recvString.append("\r\n").append("[CP收到]\t").append(op.name()).append(tab).append("\t包頭:").append(pHeaderStr).append(t).append("[").append(packetLen).append("字元]");
                 if (client.getPlayer() != null) {
                     recvString.append("角色名:").append(client.getPlayer().getName());
                 }

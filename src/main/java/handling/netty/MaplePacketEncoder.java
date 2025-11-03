@@ -51,7 +51,7 @@ public class MaplePacketEncoder extends MessageToByteEncoder<Object> {
                 }
                 StringBuilder RecvTo = new StringBuilder();
                 String t = packetLen >= 10 ? packetLen >= 100 ? packetLen >= 1000 ? "" : " " : "  " : "   ";
-                RecvTo.append("\r\n[LP]\t").append(op.name()).append(tab).append("\t包頭:").append(pHeaderStr).append(t).append("[").append(packetLen).append("字元]");
+                RecvTo.append("\r\n[LP發出]\t").append(op.name()).append(tab).append("\t包頭:").append(pHeaderStr).append(t).append("[").append(packetLen).append("字元]");
                 if (client.getPlayer() != null) {
                     RecvTo.append("角色名:").append(client.getPlayer().getName());
                 }
