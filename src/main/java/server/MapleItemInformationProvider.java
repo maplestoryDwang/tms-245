@@ -816,7 +816,15 @@ public class MapleItemInformationProvider {
             }
             DatabaseConnection.domain(con -> {
                 WzSqlName.wz_itemdata.drop(con);
-                SqlTool.update(con, "CREATE TABLE `wz_itemdata` (`itemid` int NOT NULL,`data` mediumtext NOT NULL,`name` text NOT NULL,`desc` text NOT NULL,`msg` text NOT NULL,PRIMARY KEY (`itemid`))");
+                SqlTool.update(con, "" +
+                        "CREATE TABLE `wz_itemdata` (\n" +
+                        "  `itemid` int(11) NOT NULL,\n" +
+                        "  `data` mediumtext NOT NULL,\n" +
+                        "  `name` text NOT NULL,\n" +
+                        "  `desc` text NOT NULL,\n" +
+                        "  `msg` text NOT NULL,\n" +
+                        "  PRIMARY KEY (`itemid`)\n" +
+                        ") ENGINE=InnoDB DEFAULT CHARSET=utf8;");
 
                 for (Entry<Integer, Map<String, Object>> data : itemDataCache.entrySet()) {
                     SqlTool.update(con, "INSERT INTO `wz_itemdata` (`itemid`,`data`,`name`,`desc`,`msg`) VALUES (?,?,?,?,?)", new Object[]{

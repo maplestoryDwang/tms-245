@@ -26,10 +26,7 @@ import java.sql.SQLException;
 import java.util.List;
 import java.util.*;
 import java.util.Map.Entry;
-import java.util.concurrent.ExecutionException;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.Future;
+import java.util.concurrent.*;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
@@ -47,7 +44,7 @@ public class SkillFactory {
     private static final Map<Integer, SummonSkillEntry> summonSkillInformation = new HashMap<>();
     private static final Map<Integer, Integer> mountIds = new HashMap<>();
     private static final Map<Integer, FamiliarEntry> familiarInformation = new HashMap<>();
-    private static final Map<Integer, List<Integer>> skillsByJob = new HashMap<>();
+    private static final Map<Integer, List<Integer>> skillsByJob = new ConcurrentHashMap<>();
     private static final Lock nameStringLock = new ReentrantLock();
     public static final Map<Integer, Integer> memorySkills = new HashMap<>();
 

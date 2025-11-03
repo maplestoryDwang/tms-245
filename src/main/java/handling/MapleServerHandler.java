@@ -253,7 +253,7 @@ public final class MapleServerHandler extends ChannelInboundHandlerAdapter {
             UNKNOWN_PACKET.add(packetId);
             RecvPacketOpcode opcode = RecvPacketOpcode.getByValue(packetId);
             if (opcode == null) {
-                log.warn(String.format("Unknown Packet: %d(0x%s)", packetId, Integer.toHexString(packetId)));
+                log.warn(String.format("Unknown Packet: %d(0x%s) \n{}", packetId, Integer.toHexString(packetId)), slea);
             } else {
                 log.warn(String.format("[%s] Unhandled Packet: %s(%d)", type, opcode.name(), packetId));
             }

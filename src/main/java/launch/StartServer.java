@@ -25,6 +25,7 @@ public class StartServer {
         }
         HttpServer.start();
         startServer();
+//        System.setProperty("debug", "dev");
         //EcpayServer.SocketServer.StartServer();
     }
 

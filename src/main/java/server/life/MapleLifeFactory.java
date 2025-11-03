@@ -132,7 +132,11 @@ public class MapleLifeFactory {
                 SqlTool.queryAndGetList(con, "SELECT * FROM `wz_npcnames`", rs -> npcNames.put(rs.getInt("npcid"), rs.getString("name")));
             } else {//load from wz and insert into sql
                 WzSqlName.wz_npcnames.drop(con);
-                SqlTool.update(con, "CREATE TABLE `wz_npcnames` (`npcid` int NOT NULL,`name` text NOT NULL,PRIMARY KEY (`npcid`))");
+                SqlTool.update(con, "CREATE TABLE `wz_npcnames` (\n" +
+                        "  `npcid` int(11) NOT NULL,\n" +
+                        "  `name` text NOT NULL,\n" +
+                        "  PRIMARY KEY (`npcid`)\n" +
+                        ") ENGINE=InnoDB DEFAULT CHARSET=utf8;");
                 MapleData npcStringData = stringDataWZ.getData("Npc.img");
                 for (MapleData c : npcStringData) {
                     if (c.getName().contains("pack_ignore")) {
